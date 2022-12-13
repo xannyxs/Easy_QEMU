@@ -36,6 +36,7 @@ function _create()
 # -cdrom - The ISO needed for the qcow2. Only needs it for first installation.
 # -drive - Which .qcow2 file it needs.
 # -accel=hvf - KVM for MacOS
+# -nic - connect between host and guest by their port numbers 
 function _start()
 {
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -58,6 +59,7 @@ function _start()
   -device usb-tablet \
   -drive file=$1,if=virtio \
   -cpu host \
+  -nic user,hostfwd=tcp::8888-:22 \
   $CDROM \
   $KVM
 
