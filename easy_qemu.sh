@@ -44,6 +44,11 @@ function _start()
     KVM="-machine type=q35,accel=hvf"
   fi
 
+  if [[ "$2" == *".iso" ]]; then
+    CDROM="-cdrom $2"
+  fi
+  echo Staring Virtual Machine...
+
   qemu-system-x86_64 \
   -m 4G \
   -smp 2 \
@@ -51,12 +56,11 @@ function _start()
   -display default,show-cursor=on \
   -usb \
   -device usb-tablet \
-  -cdrom debian-11.5.0-amd64-netinst.iso \
   -drive file=$1,if=virtio \
   -cpu host \
+  $CDROM \
   $KVM
 
-  exit 0
 }
 
 function _help()
@@ -71,11 +75,11 @@ function main()
 {
   if [ "$1" == "create" ]; then
     _create
-  elif [ "$1" == "start" ] && [ $# -eq 2 ] && [ -f "$2" ]; then
-    _start "$2"
+  elif [ "$1" == "start" ] && [ -f "$2" ] && [ $# -eq 2 ] || [ $# -eq 3 ]; then
+    _start "$2" "$3"
   else
     _help
   fi
 }
 
-main $1 $2
+main $1 $2 $3
