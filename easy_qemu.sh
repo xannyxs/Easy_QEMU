@@ -90,9 +90,9 @@ function _start()
   -device usb-tablet \
   -drive file=$1,if=virtio \
   -cpu host \
-  -nic user,hostfwd=tcp::8888-:22 \
-  $CDROM \
-  $KVM
+  -nic user,hostfwd=tcp::22-:22 \
+  "$CDROM" \
+  "$KVM"
 
 }
 
@@ -132,4 +132,4 @@ function main()
 }
 
 # https://blog.programster.org/qemu-img-cheatsheet
-main $1 $2 $3 $4
+main "$1" "$2" "$3" "$4"
