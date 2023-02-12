@@ -1,7 +1,5 @@
 # easy_qemu
 
----
-
 <b>easy_qemu is a simple bash script that automates the process of creating and starting virtual machines using QEMU.
 The script has several functions that allow you to create and manage snapshots,
 create new virtual machines, start existing virtual machines, and list snapshots.</b>
