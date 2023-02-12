@@ -5,9 +5,10 @@ The script has several functions that allow you to create and manage snapshots,
 create new virtual machines, start existing virtual machines, and list snapshots.</b>
 
 ### Installation - 🛠
+There is just one dependency, which is: `qemu`. <br>
+[Here](https://www.qemu.org/download/) you can find the documentation on how to install qemu on your OS.
 
-Clone the repository to your local machine:
-
+Clone the repository to your local machine: <br>
 `git clone https://github.com/xvoorvaa/easy_qemu.git`
 
 ### Usage - ⌨️
