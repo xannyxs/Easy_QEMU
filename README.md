@@ -22,17 +22,13 @@ Clone the repository to your local machine:
 ```
 
 ### Create
-
 This function creates a new qcow2 file with a specified name. If a file with the same name already exists, it will ask the user if they want to delete it.
-Start
 
 ### Start
 This function starts the virtual machine with the specified qcow2 file and ISO image. It also has several options for the virtual machine such as amount of RAM, CPU cores, and connectivity options.
-Snapshot.
 
 ### Snapshot
 This function allows you to create, delete, apply, and list snapshots of the virtual machine.
-Contributing
 
 ---
 
