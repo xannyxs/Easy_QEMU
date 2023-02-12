@@ -1,9 +1,5 @@
 #! /usr/bin/env bash
 
-# TODO
-# Check if ISO file is given, if not it should not give the -cdrom flag
-# Make README.md
-
 OSTYPE=$(uname)
 
 function _snapshot_create()
